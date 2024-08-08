@@ -3,13 +3,10 @@ services:
     container_name: vue_dev_app
     build:
       context: .
-      dockerfile: .devcontainer/Dockerfile
+      dockerfile: Dockerfile
     volumes:
-      - .:/workspace
-      - /workspace/node_modules
+      - ./workspace:/workspace
     ports:
       - "8080:8080"
-    env_file:
-      - .env
     environment:
       - NODE_ENV=development
